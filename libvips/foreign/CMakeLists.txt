@@ -1,0 +1,75 @@
+add_library(
+    foreign
+    cairo.c
+    niftisave.c
+    gifload.c
+    openexrload.c
+    openslideload.c
+    pngsave.c
+    ppmload.c
+    jpegsave.c
+    niftiload.c
+    magick.c
+    vipssave.c
+    svgload.c
+    pngload.c
+    csvsave.c
+    webpload.c
+    jpegload.c
+    tiffload.c
+    radsave.c
+    matload.c
+    webpsave.c
+    vips2tiff.c
+    fitsload.c
+    magick2vips.c
+    csvload.c
+    vipspng.c
+    rawload.c
+    ppmsave.c
+    exif.c
+    vipsload.c
+    fitssave.c
+    quantise.c
+    radiance.c
+    magick.h
+    rawsave.c
+    csv.c
+    webp2vips.c
+    openexr2vips.c
+    jpeg.h
+    tiffsave.c
+    magick7load.c
+    analyze2vips.c
+    matlab.c
+    dzsave.c
+    radload.c
+    vips2webp.c
+    magicksave.c
+    analyzeload.c
+    tiff.c
+    foreign.c
+    pdfload_pdfium.c
+    dbh.h
+    openslide2vips.c
+    magickload.c
+    matrixload.c
+    ppm.c
+    jpeg2vips.c
+    pdfload.c
+    matrixsave.c
+    fits.c
+    vips2jpeg.c
+    pforeign.h
+    tiff2vips.c
+    tiff.h
+)
+
+target_compile_definitions(
+    foreign
+    PRIVATE
+    HAVE_LIBWEBP
+    HAVE_PNG
+)
+target_include_directories(foreign PUBLIC ${VIPS_INCLUDE_DIR})
+target_link_libraries(foreign PkgConfig::glib-2.0)
